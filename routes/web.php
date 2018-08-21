@@ -18,3 +18,12 @@ Route::get('/', function () {
 Route::get('/hola-mundo', function () {
 	return ("<h1>Hello nigga</h1>");
 });
+
+Route::post('/hola-mundo', function () {
+	return ("<h1>Hello nigga but POST</h1>");
+});
+
+Route::match(['get', 'post'], '/contacto', function () {
+	return view('contacto');
+});
+
