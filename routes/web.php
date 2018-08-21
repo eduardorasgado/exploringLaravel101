@@ -30,10 +30,8 @@ Route::match(['get', 'post'], '/contacto', function () {
 // pasar parametro a la funcion de callback
 Route::get('/usuario/{nombre?}/{edad?}', function ($nombre = "eduardoRasgado", $edad = 24) {
 	// podemos pasarle los parametros obtenidos de la url
-	return view('usuario', [
-		"nombre" => $nombre,
-		"edad" => $edad
-	]);
+	return view('usuario')->with("nombre", $nombre)
+												->with("edad", $edad);
 	//condicionando la validacion de rutas
 })->where([
 	// con expresiones regulares
